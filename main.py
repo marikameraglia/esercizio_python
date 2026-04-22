@@ -37,7 +37,7 @@ s3 = Studente("Giulia", "Bianchi", 21, "B11223")
 s4 = Studente("Marco", "Verdi", 23, "V44556")
 s5 = Studente("Sofia", "Neri", 22, "N77889")
 
-# Lista per automatizzare la stampa se vuoi, ma li stampiamo uno per uno per chiarezza
+# Lista per automatizzare la stampa
 studenti = [s1, s2, s3, s4, s5]
 
 # Assegnazione voti e ore di studio casuali per il test
