@@ -7,14 +7,13 @@ class Studente:
         self.voti = []
 
     def presentati(self):
-        return f"Ciao, sono {self.nome} {self.cognome}, ho {self.eta} anni e la mia matricola è {self.matricola}."
+        return f"Studente: {self.nome} {self.cognome} | Età: {self.eta} | Matricola: {self.matricola}"
 
     def aggiungi_voto(self, voto):
         if 18 <= voto <= 30:
             self.voti.append(voto)
-            print(f"Voto {voto} aggiunto a {self.nome}.")
         else:
-            print("Voto non valido (deve essere tra 18 e 30).")
+            print(f"Attenzione: Il voto {voto} non è valido!")
 
     def calcola_media(self):
         if not self.voti:
@@ -22,27 +21,35 @@ class Studente:
         return sum(self.voti) / len(self.voti)
 
     def studia(self, ore):
-        print(f"{self.nome} sta studiando da {ore} ore per l'esame!")
+        print(f"L'alunno {self.nome} {self.cognome} ha studiato per {ore} ore.")
 
 
-# --- ESECUZIONE DEL PROGRAMMA ---
+# --- DIMOSTRAZIONE FUNZIONAMENTO ---
 
-# 1. Creazione di due oggetti (istanze) della classe Studente
-studente1 = Studente("Marika", "Meraglia", 22, "12345")
-studente2 = Studente("Luca", "Rossi", 24, "67890")
+print("=" * 40)
+print("  ESERCITAZIONE FINALE: CLASSE STUDENTE  ")
+print("=" * 40)
 
-# 2. Utilizzo dei metodi per lo Studente 1
-print(studente1.presentati())
+# Creazione degli oggetti
+studente1 = Studente("Marika", "Meraglia", 22, "M12345")
+studente2 = Studente("Luca", "Rossi", 24, "L67890")
+
+# Azioni Studente 1
+print(f"\n[TEST 1] {studente1.presentati()}")
 studente1.aggiungi_voto(28)
 studente1.aggiungi_voto(30)
-studente1.studia(4)
-print(f"Media voti di {studente1.nome}: {studente1.calcola_media():.2f}")
+studente1.studia(5)
+print(f"Media voti: {studente1.calcola_media():.2f}")
 
-print("-" * 30)
+print("-" * 20)
 
-# 3. Utilizzo dei metodi per lo Studente 2
-print(studente2.presentati())
+# Azioni Studente 2
+print(f"[TEST 2] {studente2.presentati()}")
 studente2.aggiungi_voto(24)
 studente2.aggiungi_voto(26)
-studente2.studia(2)
-print(f"Media voti di {studente2.nome}: {studente2.calcola_media():.2f}")
+studente2.studia(3)
+print(f"Media voti: {studente2.calcola_media():.2f}")
+
+print("\n" + "=" * 40)
+print("       ESECUZIONE COMPLETATA          ")
+print("=" * 40)
